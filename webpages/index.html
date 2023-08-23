@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, world!</title>
+    <script src="https://unpkg.com/htmx.org@1.9.4" integrity="sha384-zUfuhFKKZCbHTY6aRR46gxiqszMk5tcHjsVFxnUo8VMus4kHGVdIYVbOYYNlKmHV" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h3>
+      Search Users
+    </h3>
+    <form class="form-control" type="search_form" hx-post="/search_name" hx-trigger="load, change, keyup delay:500ms, search" hx-target="#search-results">
+        First name: <label for="first_name"></label><input type="text" id="first_name" name="first_name"><br>
+        Last name: <label for="last_name"></label><input type="text" id="last_name" name="last_name"><br>
+        Is admin?: <label for="is_admin"></label><input type="checkbox" id="is_admin" name="is_admin"><br>
+    </form>
+    <h3>Results: </h3>
+    <div id="search-results"></div>
+</body>
+</html>
